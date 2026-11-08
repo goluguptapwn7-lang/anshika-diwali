@@ -1,141 +1,138 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wife Ji ❤️ Diwali Surprise</title>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<title>For My Wife Ji ❤️</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:linear-gradient(135deg,#16051e,#55103e,#9b2451);
+color:white;font-family:Georgia,serif;
+text-align:center;overflow-x:hidden;
 }
-
-body {
-  background: linear-gradient(135deg, #20002c, #61045f, #ff8c00);
-  color: white;
-  font-family: Georgia, serif;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+.page{
+min-height:100vh;display:none;
+justify-content:center;align-items:center;
+flex-direction:column;padding:25px;
 }
-
-.card {
-  width: 90%;
-  max-width: 420px;
-  padding: 35px 20px;
-  border: 2px solid gold;
-  border-radius: 25px;
-  background: rgba(0,0,0,0.35);
-  box-shadow: 0 0 30px gold;
+.page.active{display:flex;animation:show 1s}
+@keyframes show{
+from{opacity:0;transform:translateY(25px)}
+to{opacity:1;transform:translateY(0)}
 }
-
-h1 {
-  color: #ffd700;
-  font-size: 34px;
-  margin-bottom: 20px;
+.card{
+width:100%;max-width:440px;
+padding:32px 22px;
+border:1px solid #ffda9a;
+border-radius:25px;
+background:#ffffff15;
+box-shadow:0 0 35px #ffb34755;
 }
-
-.diya {
-  font-size: 65px;
-  margin: 15px;
-  animation: glow 1.5s infinite alternate;
+h1{color:#ffdb9b;font-size:32px;margin:20px 0}
+h2{color:#ffd18b;margin:18px 0}
+p{font-size:19px;line-height:1.8;margin:15px 0}
+button{
+border:0;padding:14px 27px;
+border-radius:30px;
+background:linear-gradient(45deg,#ffb347,#ff416c);
+color:white;font-size:16px;
+margin-top:22px;cursor:pointer;
 }
-
-@keyframes glow {
-  from { filter: drop-shadow(0 0 5px orange); }
-  to { filter: drop-shadow(0 0 25px gold); }
+.heart{font-size:65px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.diya{font-size:65px}
+.gold{color:#ffdb9b}
+#music{
+position:fixed;top:12px;right:12px;
+z-index:10;margin:0;
 }
-
-p {
-  font-size: 19px;
-  line-height: 1.7;
-  margin: 18px 0;
+.star{
+position:fixed;top:-20px;
+animation:fall 7s linear infinite;
+pointer-events:none;
 }
-
-button {
-  background: linear-gradient(45deg, #ffb300, #ff4500);
-  border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
-  color: white;
-  font-size: 17px;
-  cursor: pointer;
-  margin-top: 15px;
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg)}
 }
+</style></head><body><button id="music" onclick="playSong()">🎵 Play Khat</button>
 
-#surprise {
-  display: none;
-  margin-top: 25px;
-  animation: appear 1.5s;
+<audio id="song" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio><script>
+for(let i=0;i<25;i++){
+let s=document.createElement("span");
+s.className="star";
+s.innerHTML=["✨","❤️","🌸","⭐"][i%4];
+s.style.left=Math.random()*100+"%";
+s.style.animationDelay=Math.random()*7+"s";
+s.style.fontSize="20px";
+document.body.appendChild(s);
 }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.heart {
-  color: #ff4d6d;
-  font-size: 30px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="card">
-
-<h1>✨ Happy Diwali ✨</h1>
-
+</script><section class="page active" id="p1">
 <div class="diya">🪔</div>
-
-<h2>Wife Ji ❤️</h2>
-
-<p>
-Aapke liye ek chhota sa Diwali surprise...
-</p>
-
-<button onclick="showSurprise()">
-Open Your Surprise ❤️
-</button>
-
-<div id="surprise">
-
-<h1>🌹 Wife Ji 🌹</h1>
-
-<p>
-Meri Diwali ki sabse khoobsurat khushi aap hain. ❤️
-</p>
-
-<p>
-Bhagwan kare aapki zindagi hamesha khushiyon,
-pyaar aur roshni se bhari rahe.
-</p>
-
-<p>
-Har Diwali aapke chehre par aisi hi muskurahat rahe.
-</p>
-
-<h2>Happy Diwali Meri Wife Ji 🥰</h2>
-
-<div class="heart">❤️ ❤️ ❤️</div>
-
-<p>Forever Special ✨</p>
-
+<h1>A Special Surprise</h1>
+<div class="card">
+<h2>For My Wife Ji ❤️</h2>
+<p>Aaj ka ye surprise sirf aapke liye hai...</p>
+<p class="gold">Ek chhoti si duniya, jisme sirf aapki khushiyan hain.</p>
+<button onclick="playSong();next(2)">Open My Surprise ❤️</button>
 </div>
-
+</section><section class="page" id="p2">
+<div class="card">
+<div class="heart">💗</div>
+<h1>My Beautiful Wife</h1>
+<p>Kuch log zindagi mein aate hain aur poori duniya khoobsurat bana dete hain.</p>
+<p>Aap mere liye wahi insaan ho.</p>
+<p class="gold">Aapki smile meri favourite hai. 🥹</p>
+<button onclick="next(3)">Next ❤️</button>
 </div>
-
-<script>
-function showSurprise() {
-  document.getElementById("surprise").style.display = "block";
+</section><section class="page" id="p3">
+<div class="card">
+<div class="diya">🪔</div>
+<h1>My Diwali Wish</h1>
+<p>Is Diwali meri bas ek hi dua hai...</p>
+<p>Aapki zindagi hamesha khushiyon se roshan rahe.</p>
+<p class="gold">Aap meri duniya ki sabse khoobsurat roshni ho. ❤️</p>
+<button onclick="next(4)">Read My Letter 💌</button>
+</div>
+</section><section class="page" id="p4">
+<div class="card">
+<h1>Dear Wife Ji 💌</h1>
+<p>Shayad main har baar apni feelings words mein express nahi kar pata...</p>
+<p>Lekin aap mere liye bahut special ho.</p>
+<p>Har chhoti khushi mein, har khoobsurat pal mein aapka khayal aata hai.</p>
+<p class="gold">Thank You For Being In My Life. ❤️</p>
+<button onclick="next(5)">Last Surprise 🥹</button>
+</div>
+</section><section class="page" id="p5">
+<div class="heart">❤️</div>
+<div class="card">
+<h1>One Last Thing</h1>
+<h2>My Forever Wife Ji 💍</h2>
+<p>Na koi perfect kahani chahiye, na koi perfect duniya...</p>
+<p>Bas har khoobsurat kahani mein aapka saath chahiye.</p>
+<div class="diya">🌹🪔🌹</div>
+<h1>I LOVE YOU</h1>
+<p class="gold">Happy Diwali Wife Ji ❤️</p>
+<button onclick="alert('Aapki smile hi mera sabse khoobsurat gift hai ❤️')">Love You Too 💖</button>
+</div>
+</section><script>
+function next(n){
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+});
+document.getElementById("p"+n).classList.add("active");
+window.scrollTo(0,0);
 }
-</script>
 
-</body>
+function playSong(){
+let song=document.getElementById("song");
+if(song.paused){
+song.play();
+document.getElementById("music").innerHTML="⏸ Pause Khat";
+}else{
+song.pause();
+document.getElementById("music").innerHTML="🎵 Play Khat";
+}
+}
+</script></body>
 </html>
